@@ -183,24 +183,6 @@ Content-Type: application/json
 }
 ```
 
-## 📸 Screenshots
-
-### Main Dashboard
-![Event List Page](screenshots/event-list.png)
-*Main dashboard showing all events with search and filter functionality*
-
-### Event Creation
-![Create Event](screenshots/create-event.png)
-*User-friendly form for creating new events*
-
-### Search & Filter
-![Search Filter](screenshots/search-filter.png)
-*Advanced search and filtering interface*
-
-### Mobile View
-![Mobile Responsive](screenshots/mobile-view.png)
-*Responsive design optimized for mobile devices*
-
 ## 📁 Project Structure
 
 ```
