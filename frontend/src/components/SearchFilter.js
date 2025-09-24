@@ -41,7 +41,7 @@ const SearchFilter = ({ events = [], onFilter }) => {
   ];
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 mb-6">
+    <div className="bg-gray-800 p-4 rounded-lg shadow-sm border border-gray-700 mb-6">
       <div className="flex flex-col md:flex-row gap-4 items-start md:items-center">
         {/* Search Input */}
         <div className="flex-1">
@@ -50,7 +50,7 @@ const SearchFilter = ({ events = [], onFilter }) => {
             placeholder="🔍 Search events by title or description..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+            className="w-full border border-gray-600 bg-gray-700 text-white rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors placeholder-gray-400"
           />
         </div>
 
@@ -59,10 +59,10 @@ const SearchFilter = ({ events = [], onFilter }) => {
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors bg-white"
+            className="w-full border border-gray-600 bg-gray-700 text-white rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
           >
             {statusOptions.map((option) => (
-              <option key={option.value} value={option.value}>
+              <option key={option.value} value={option.value} className="bg-gray-700 text-white">
                 {option.label} {option.count > 0 && `(${option.count})`}
               </option>
             ))}
@@ -73,7 +73,7 @@ const SearchFilter = ({ events = [], onFilter }) => {
         {(searchTerm || statusFilter) && (
           <button
             onClick={clearFilters}
-            className="px-4 py-2 text-gray-600 hover:text-gray-800 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+            className="px-4 py-2 text-gray-300 hover:text-white border border-gray-600 rounded-lg hover:bg-gray-700 transition-colors"
           >
             Clear Filters
           </button>

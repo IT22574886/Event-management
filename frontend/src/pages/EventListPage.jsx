@@ -50,37 +50,39 @@ const EventListPage = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
-        <div className="text-xl">Loading events...</div>
+        <div className="text-xl">Loading Events...</div>
       </div>
     );
   }
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-6xl">
-      {/* Header with title and Add New Event button */}
-      <div className="flex flex-col items-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4 text-center">
-          Event Management
-        </h1>
-        <button
-          onClick={handleAddNewEvent}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors duration-200 font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-        >
-          ✨ Add New Event
-        </button>
-      </div>
-
-      {/* Search and Filter Section */}
-      <SearchFilter events={allEvents} onFilter={handleFilter} />
-
-      {/* Events section */}
-      <div className="mb-6">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-semibold text-gray-700">
-            Events ({filteredEvents.length})
-          </h2>
+    <div className="min-h-screen bg-gray-900">
+      <div className="container mx-auto px-4 py-8 max-w-6xl">
+        {/* Header with title and Add New Event button */}
+        <div className="flex flex-col items-center mb-8">
+          <h1 className="text-3xl font-bold text-white mb-4 text-center">
+            Event Management
+          </h1>
+          <button
+            onClick={handleAddNewEvent}
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors duration-200 font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+          >
+            ✨ Add New Event
+          </button>
         </div>
-        <EventList events={filteredEvents} />
+
+        {/* Search and Filter Section */}
+        <SearchFilter events={allEvents} onFilter={handleFilter} />
+
+        {/* Events section */}
+        <div className="mb-6">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-xl font-semibold text-gray-300">
+              Events ({filteredEvents.length})
+            </h2>
+          </div>
+          <EventList events={filteredEvents} />
+        </div>
       </div>
     </div>
   );

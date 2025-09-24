@@ -25,15 +25,15 @@ const EventForm = ({ initialData, onSubmit }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-2xl mx-auto bg-white p-6 mt-6 rounded-xl shadow"
+      className="max-w-2xl mx-auto bg-gradient-to-br from-gray-50 via-white to-blue-50 p-8 mt-8 rounded-2xl shadow-lg border border-blue-200"
     >
-      <h3 className="text-2xl font-semibold mb-4">
+      {/* <h3 className="text-3xl font-bold mb-6 text-blue-700 tracking-tight">
         {initialData ? "Edit Event" : "Create Event"}
-      </h3>
+      </h3> */}
 
       {["title", "description", "date", "venue", "capacity"].map((field) => (
-        <div key={field} className="mb-4">
-          <label className="block font-medium mb-1 capitalize">{field}</label>
+        <div key={field} className="mb-5">
+          <label className="block font-semibold mb-2 capitalize text-gray-700">{field}</label>
           <input
             type={field === "date" ? "date" : field === "capacity" ? "number" : "text"}
             name={field}
@@ -41,18 +41,18 @@ const EventForm = ({ initialData, onSubmit }) => {
             min={field === "capacity" ? 1 : undefined}
             onChange={handleChange}
             required
-            className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full border border-blue-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white shadow-sm transition"
           />
         </div>
       ))}
 
-      <div className="mb-4">
-        <label className="block font-medium mb-1">Status</label>
+      <div className="mb-5">
+        <label className="block font-semibold mb-2 text-gray-700">Status</label>
         <select
           name="status"
           value={formData.status}
           onChange={handleChange}
-          className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring focus:ring-blue-300"
+          className="w-full border border-blue-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white shadow-sm transition"
         >
           <option value="draft">Draft</option>
           <option value="published">Published</option>
